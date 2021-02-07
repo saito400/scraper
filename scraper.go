@@ -22,8 +22,8 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	for i, n := range list {
+	for _, n := range list {
 		a := htmlquery.FindOne(n, "//a")
-		fmt.Printf("%d %s(%s)\n", i, htmlquery.InnerText(a), htmlquery.SelectAttr(a, "href"))
+		fmt.Printf("%s(%s)\n", htmlquery.InnerText(a), htmlquery.SelectAttr(a, "href"))
 	}
 }
